@@ -1,0 +1,50 @@
+{% load i18n pages_tags %}
+
+{% if on_home %}
+<li>{% trans "Home" %}</li>
+{% else %}
+<div class="col-md-2">
+{% for page in page_branch %}
+	{% if forloop.counter|divisibleby:2 %}
+		{% if page.pagewithicon %}
+		<div class="menu-item {{page.pagewithicon.menustyle}}">
+			<a href="{{page.get_absolute_url}}">
+				<i class="{{ page.pagewithicon.icon }}"></i>
+				<p>{{page.title}}</p>
+			</a>
+		</div>
+		{% else %}
+		<div class="menu-item {{page.portfolio.menustyle}}">
+			<a href="{{page.get_absolute_url}}">
+				<i class="{{ page.portfolio.icon }}"></i>
+				<p>{{page.title}}</p>
+			</a>
+		</div>
+		{% endif %}
+	{% endif %}
+{% endfor %}
+</div>
+<div class="col-md-2">
+{% for page in page_branch %}
+	{% if forloop.counter|divisibleby:2 %}
+	{% else %}
+		{% if page.pagewithicon %}
+		<div class="menu-item {{page.pagewithicon.menustyle}}">
+			<a href="{{page.get_absolute_url}}">
+				<i class="{{ page.pagewithicon.icon }}"></i>
+				<p>{{page.title}}</p>
+			</a>
+		</div>
+		{% else %}
+		<div class="menu-item {{page.portfolio.menustyle}}">
+			<a href="{{page.get_absolute_url}}">
+				<i class="{{ page.portfolio.icon }}"></i>
+				<p>{{page.title}}</p>
+			</a>
+		</div>
+		{% endif %}
+	{% endif %}
+{% endfor %}
+</div>
+
+{% endif %}

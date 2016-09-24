@@ -1,0 +1,56 @@
+{% extends "pages/page.html" %}
+
+{% load mezzanine_tags staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+
+<link href="{{ STATIC_URL }}lightbox2/css/lightbox.css" rel="stylesheet">
+
+{% endblock extra_css %}
+
+
+{% block main %}
+
+
+
+<div class="grid">
+
+    {% for photo in page.portfolio.get_public_photos %}
+	<a href="{{photo.get_display_url}}" class="grid-item" data-lightbox="images" data-title="{{photo.title}}">
+		<img class="grid-item" src="{{photo.get_bigthumb_url}}" />
+	</a>
+    
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript" src="{{ STATIC_URL }}lightbox2/js/lightbox.js"></script>
+
+<script type="text/javascript" src="{{ STATIC_URL }}masonry/masonry.pkgd.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+var $grid = $('.grid').masonry({
+  columnWidth: 80
+
+});
+
+});
+
+</script>
+
+
+{% endblock %}
