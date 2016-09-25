@@ -8,7 +8,7 @@ source ../jfshop2-env/bin/deactivate
 source ../jfshop2-env/bin/activate
 cp -rf deploy/local_settings.py.template ./jfshop2/local_settings.py
 cp -rf deploy/gunicorn.conf.py.template ./gunicorn.conf.py
-cp -rf deploy/upstart.conf.template ./upstart.conf
+cp -rf deploy/runit.conf.template ./runit.conf
 
 pip3 install -r requirements.txt
 
@@ -26,8 +26,8 @@ echo "create database jfshop2" | mysql -uroot -p$password
 MY_PATH_ESC=$(echo $MY_PATH | sed -e 's/[\/&]/\\&/g')
 VIRTUALENVPATH="`( cd \"$MY_PATH/../jfshop2-env\" && pwd )`"
 VIRTUALENVPATH_ESC=$(echo $VIRTUALENVPATH | sed -e 's/[\/&]/\\&/g')
-sed -i -- "s/<%CURRENTDIR%>/$MY_PATH_ESC/g" ./upstart.conf
-sed -i -- "s/<%VIRTUALENVDIR%>/$VIRTUALENVPATH_ESC/g" ./upstart.conf
+sed -i -- "s/<%CURRENTDIR%>/$MY_PATH_ESC/g" ./runit.conf
+sed -i -- "s/<%VIRTUALENVDIR%>/$VIRTUALENVPATH_ESC/g" ./runit.conf
 
 cp -rf ./jfshop2/local_settings.py build/lib/jfshop2/local_settings.py
 
