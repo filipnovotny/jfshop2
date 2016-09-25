@@ -4,3 +4,4 @@ django-photologue
 gunicorn
 mysqlclient
 fabric
+upstart
