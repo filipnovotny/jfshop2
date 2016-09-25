@@ -10,4 +10,4 @@ APP=jfshop2.wsgi:application
 if [ -f $PID ]; then rm $PID; fi
 
 cd $ROOT
-exec $GUNICORN -c $ROOT/gunicorn.conf.py --pid=$PID $APP --log-file=
+exec $GUNICORN -c $ROOT/gunicorn.conf.py --pid=$PID $APP --log-file=$LOG_FILE
