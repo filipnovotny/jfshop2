@@ -3,5 +3,4 @@ apt-get --assume-yes install  build-essential mysql-server python3-dev python-vi
 pip3 install --upgrade virtualenv
 virtualenv ../jfshop2-env
 source ../jfshop2-env/bin/activate
-pip3 install -r requirements.txt
 ./update.sh
