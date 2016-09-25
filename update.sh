@@ -24,7 +24,7 @@ sed -i -- "s/<%PASSWORD%>/$password/g" ./jfshop2/local_settings.py
 echo "create database jfshop2" | mysql -uroot -p$password
 
 sed -i -- "s/<%CURRENTDIR%>/$MY_PATH/g" ./jfshop2/upstart.conf
-VIRTUALENVPATH=MY_PATH="`( cd \"$MY_PATH/../jfshop2-env\" && pwd )`"
+VIRTUALENVPATH="`( cd \"$MY_PATH/../jfshop2-env\" && pwd )`"
 sed -i -- "s/<%VIRTUALENVDIR%>/$VIRTUALENVPATH/g" ./jfshop2/upstart.conf
 
 cp -rf ./jfshop2/local_settings.py build/lib/jfshop2/local_settings.py
