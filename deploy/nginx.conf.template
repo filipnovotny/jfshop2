@@ -32,7 +32,7 @@ http {
 
   server {
     # if no Host match, close the connection to prevent host spoofing
-    listen 80 default_server;
+    listen 8080 default_server;
     return 444;
   }
 
@@ -41,12 +41,12 @@ http {
     client_max_body_size 4G;
 
     # set the correct host(s) for your site
-    server_name example.com www.example.com;
+    server_name jfshop2;
 
     keepalive_timeout 5;
 
     # path for static files
-    root /path/to/app/current/public;
+    root <%CURRENTDIR%>/static;
 
     location / {
       # checks for static file, if not found proxy to app
