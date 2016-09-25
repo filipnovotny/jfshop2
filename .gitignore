@@ -49,3 +49,6 @@ Temporary Items
 
 *.pyc
 mezzanine_themes.egg-info
+static
+build
+dev.db
