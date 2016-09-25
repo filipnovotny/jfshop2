@@ -19,6 +19,8 @@ password=`cat password.txt`
 sed -i -- "s/<%PASSWORD%>/$password/g" local_settings.py
 echo "create database jfshop2" | mysql -uroot -p$password
 
+cp -rf local_settings.py build/lib/jfshop2/local_settings.py
+
 
 python manage.py createdb --noinput --nodata
 python manage.py migrate

@@ -34,20 +34,17 @@ DATABASES = {
 ###################
 
 # Domains for public site
-# ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = [""]
 
-# These settings are used by the default fabfile.py provided.
-# Check fabfile.py for defaults.
-
-# FABRIC = {
-#     "DEPLOY_TOOL": "rsync",  # Deploy with "git", "hg", or "rsync"
-#     "SSH_USER": "",  # VPS SSH username
-#     "HOSTS": [""],  # The IP address of your VPS
-#     "DOMAINS": ALLOWED_HOSTS,  # Edit domains in ALLOWED_HOSTS
-#     "REQUIREMENTS_PATH": "requirements.txt",  # Project's pip requirements
-#     "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
-#     "DB_PASS": "",  # Live database password
-#     "ADMIN_PASS": "",  # Live admin user password
-#     "SECRET_KEY": SECRET_KEY,
-#     "NEVERCACHE_KEY": NEVERCACHE_KEY,
-# }
+FABRIC = {
+    "DEPLOY_TOOL": "rsync",  # Deploy with "git", "hg", or "rsync"
+    "SSH_USER": "dt",  # VPS SSH username
+    "HOSTS": ["dtserv.cloudapp.net"],  # The IP address of your VPS
+    "DOMAINS": ALLOWED_HOSTS,  # Edit domains in ALLOWED_HOSTS
+    "REQUIREMENTS_PATH": "requirements.txt",  # Project's pip requirements
+    "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
+    "DB_PASS": "aekx68eb",  # Live database password
+    "ADMIN_PASS": "aekx68eb",  # Live admin user password
+    "SECRET_KEY": SECRET_KEY,
+    "NEVERCACHE_KEY": NEVERCACHE_KEY,
+}
