@@ -3,4 +3,4 @@ Mezzanine
 django-photologue
 gunicorn
 mysqlclient
-supervisor
+
