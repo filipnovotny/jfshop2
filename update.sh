@@ -23,9 +23,11 @@ password=`cat password.txt`
 sed -i -- "s/<%PASSWORD%>/$password/g" ./jfshop2/local_settings.py
 echo "create database jfshop2" | mysql -uroot -p$password
 
-sed -i -- "s/<%CURRENTDIR%>/$MY_PATH/g" ./jfshop2/upstart.conf
+MY_PATH_ESC = `echo $MY_PATH | sed -e 's/[\/&]/\\&/g'`
+VIRTUALENVPATH_ESC = `echo $VIRTUALENVPATH | sed -e 's/[\/&]/\\&/g'`
+sed -i -- "s/<%CURRENTDIR%>/$MY_PATH_ESC/g" ./jfshop2/upstart.conf
 VIRTUALENVPATH="`( cd \"$MY_PATH/../jfshop2-env\" && pwd )`"
-sed -i -- "s/<%VIRTUALENVDIR%>/$VIRTUALENVPATH/g" ./jfshop2/upstart.conf
+sed -i -- "s/<%VIRTUALENVDIR%>/$VIRTUALENVPATH_ESC/g" ./jfshop2/upstart.conf
 
 cp -rf ./jfshop2/local_settings.py build/lib/jfshop2/local_settings.py
 
