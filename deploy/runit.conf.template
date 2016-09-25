@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GUNICORN=<%VIRTUALENVDIR%>
+GUNICORN=<%VIRTUALENVDIR%>/bin/gunicorn
 ROOT=<%CURRENTDIR%>
 PID=/var/run/gunicorn.pid
 
