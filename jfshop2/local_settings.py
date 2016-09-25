@@ -43,8 +43,8 @@ FABRIC = {
     "DOMAINS": ALLOWED_HOSTS,  # Edit domains in ALLOWED_HOSTS
     "REQUIREMENTS_PATH": "requirements.txt",  # Project's pip requirements
     "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
-    "DB_PASS": "aekx68eb",  # Live database password
-    "ADMIN_PASS": "aekx68eb",  # Live admin user password
+    "DB_PASS": "",  # Live database password
+    "ADMIN_PASS": "",  # Live admin user password
     "SECRET_KEY": SECRET_KEY,
     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 }
