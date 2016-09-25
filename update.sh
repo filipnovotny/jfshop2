@@ -1,9 +1,11 @@
-git pull
+echo yes | git pull
 source ../jfshop2-env/bin/deactivate
 source ../jfshop2-env/bin/activate
 cp -rf deploy/local_settings.py.template local_settings.py
 cp -rf deploy/supervisord.conf.template /etc/supervisord.conf
 cp -rf deploy/gunicorn.conf.py.template /etc/gunicorn.conf.py
+
+pip3 install -r requirements.txt
 
 if [ -f password.txt ];
 then
