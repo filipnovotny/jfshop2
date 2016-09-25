@@ -52,3 +52,9 @@ mezzanine_themes.egg-info
 static
 build
 dev.db
+lghttest.html
+*.egg
+mezzanine_themes/metro/locale/ru/LC_MESSAGES/django.po
+test.html
+mezzanine_themes/metro/locale/ru/LC_MESSAGES/django.mo
+mezzanine_themes/metro/preview/preview.gif
