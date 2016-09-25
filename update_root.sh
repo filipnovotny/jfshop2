@@ -21,6 +21,6 @@ cp -rf ./runit.conf /etc/sv/jfshop2/run
 chmod u+x /etc/sv/jfshop2/run
 ln -s /etc/sv/jfshop2 /etc/service/jfshop2
 
-reload gunicorn
+sv reload jfshop2
 service nginx restart
 
