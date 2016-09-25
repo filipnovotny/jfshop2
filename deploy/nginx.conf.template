@@ -5,11 +5,11 @@ server {
     location / {
         root   html;
         index  index.html index.htm;
-        proxy_pass http://127.0.0.1:8000;
+        proxy_pass http://0.0.0.0:8000;
     }
     location /static {
         autoindex on;
-        alias /path/to/staticfiles;
+        alias /<%CURRENTDIR%>/static;
     }
 
     error_page   500 502 503 504  /50x.html;
