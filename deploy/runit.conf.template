@@ -3,10 +3,11 @@
 GUNICORN=<%VIRTUALENVDIR%>/bin/gunicorn
 ROOT=<%CURRENTDIR%>
 PID=/var/run/gunicorn.pid
+LOG_FILE=<%CURRENTDIR%>/gunicorn.log
 
 APP=jfshop2.wsgi:application
 
 if [ -f $PID ]; then rm $PID; fi
 
 cd $ROOT
-exec $GUNICORN -c $ROOT/gunicorn.conf.py --pid=$PID $APP
+exec $GUNICORN -c $ROOT/gunicorn.conf.py --pid=$PID $APP --log-file=
