@@ -19,12 +19,12 @@ admin.autodiscover()
 urlpatterns = i18n_patterns(
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
-    url("^admin/", include(admin.site.urls)),
+    url("^%s/admin/"% settings.SITE_PREFIX, include(admin.site.urls)),
 )
 
 if settings.USE_MODELTRANSLATION:
     urlpatterns += [
-        url('^i18n/$', set_language, name='set_language'),
+        url('^%s/i18n/$' % settings.SITE_PREFIX, set_language, name='set_language'),
     ]
 
 urlpatterns += [
@@ -38,7 +38,7 @@ urlpatterns += [
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    url("^$", IndexView.as_view(), name="home"),
+    url("^%s/$" % settings.SITE_PREFIX, IndexView.as_view(), name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -78,7 +78,7 @@ urlpatterns += [
     # ``mezzanine.urls``, go right ahead and take the parts you want
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
-    url("^", include("mezzanine.urls")),
+    #url("^", include("mezzanine.urls")),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
@@ -94,9 +94,9 @@ urlpatterns += [
     # Note that for any of the various homepage patterns above, you'll
     # need to use the ``SITE_PREFIX`` setting as well.
 
-    # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls")),
+    url("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls")),
 	
-	url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+	url(r'^%s/photologue/' % settings.SITE_PREFIX, include('photologue.urls', namespace='photologue')),
 
 ]
 
