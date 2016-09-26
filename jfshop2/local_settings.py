@@ -29,6 +29,8 @@ DATABASES = {
     }
 }
 
+SITE_PREFIX="janela"
+
 ###################
 # DEPLOY SETTINGS #
 ###################
