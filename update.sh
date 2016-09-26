@@ -40,7 +40,7 @@ cp -rf ./jfshop2/local_settings.py build/lib/jfshop2/local_settings.py
 
 python manage.py createdb --noinput --nodata
 python manage.py migrate
-FILES=./fixtures/*.fix
+FILES=./fixtures/*.json
 for f in $FILES
 do
   echo "Processing $f file..."
