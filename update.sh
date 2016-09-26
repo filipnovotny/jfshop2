@@ -44,7 +44,7 @@ FILES=./fixtures/*.fix
 for f in $FILES
 do
   echo "Processing $f file..."
-  python loaddata $f
+  python manage.py loaddata $f
   cat $f
 done
 
