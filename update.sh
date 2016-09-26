@@ -10,6 +10,7 @@ cp -rf deploy/local_settings.py.template ./jfshop2/local_settings.py
 cp -rf deploy/gunicorn.conf.py.template ./gunicorn.conf.py
 cp -rf deploy/runit.conf.template ./runit.conf
 cp -rf deploy/nginx.conf.template ./nginx.conf
+cp -rf deploy/apache2.conf.template ./apache2.conf
 
 pip3 install -r requirements.txt
 
@@ -18,6 +19,7 @@ VIRTUALENVPATH="`( cd \"$MY_PATH/../jfshop2-env\" && pwd )`"
 VIRTUALENVPATH_ESC=$(echo $VIRTUALENVPATH | sed -e 's/[\/&]/\\&/g')
 
 sed -i -- "s/<%CURRENTDIR%>/$MY_PATH_ESC/g" ./nginx.conf
+sed -i -- "s/<%CURRENTDIR%>/$MY_PATH_ESC/g" ./apache2.conf
 
 if [ -f password.txt ];
 then

@@ -21,6 +21,9 @@ cp -rf ./runit.conf /etc/sv/jfshop2/run
 chmod u+x /etc/sv/jfshop2/run
 ln -s /etc/sv/jfshop2 /etc/service/jfshop2
 
-sv reload jfshop2
-service nginx restart
+cp -rf ./apache2.conf /etc/apache2/sites-available/jfshop2.conf
+a2ensite jfshop2
 
+sv reload jfshop2
+service nginx reload
+service apache2 reload
