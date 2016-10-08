@@ -5,23 +5,14 @@
 {% block extra_css %}
 {{ block.super }}
 
-<link href="{{ STATIC_URL }}lightbox2/css/lightbox.css" rel="stylesheet">
+<link href="{{ STATIC_URL }}node_modules/portfolio/styles.css" rel="stylesheet">
 
 {% endblock extra_css %}
 
 
 {% block main %}
 
-
-
-<div class="grid">
-
-    {% for photo in page.portfolio.get_public_photos %}
-	<a href="{{photo.get_display_url}}" class="grid-item" data-lightbox="images" data-title="{{photo.title}}">
-		<img class="grid-item" src="{{photo.get_bigthumb_url}}" />
-	</a>
-    
-{% endfor %}
+<app>Loading...</app>
 
 </div>
 
@@ -30,27 +21,17 @@
 
 {% block extra_js %}
 {{ block.super }}
-<script type="text/javascript" src="{{ STATIC_URL }}lightbox2/js/lightbox.js"></script>
+<!-- Polyfill(s) for older browsers -->
+<script src="{{ STATIC_URL }}node_modules/core-js/client/shim.min.js"></script>
 
-<script type="text/javascript" src="{{ STATIC_URL }}masonry/masonry.pkgd.min.js"></script>
+<script src="{{ STATIC_URL }}node_modules/zone.js/dist/zone.js"></script>
+<script src="{{ STATIC_URL }}node_modules/reflect-metadata/Reflect.js"></script>
+<script src="{{ STATIC_URL }}node_modules/systemjs/dist/system.src.js"></script>
+
+<script src="{{ STATIC_URL }}systemjs.config.js"></script>
+
 
 <script>
-$(document).ready(function(){
-	
-
-});
+  System.import('app').catch(function(err){ console.error(err); });
 </script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-var $grid = $('.grid').masonry({
-  columnWidth: 80
-
-});
-
-});
-
-</script>
-
-
 {% endblock %}

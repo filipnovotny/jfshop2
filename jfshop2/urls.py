@@ -39,6 +39,7 @@ urlpatterns += [
     # one out.
 
     url("^%s/$" % settings.SITE_PREFIX, IndexView.as_view(), name="home"),
+    url("^%s/picturesconfig/" % settings.SITE_PREFIX, include("picturesconfig.urls")),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -97,6 +98,7 @@ urlpatterns += [
     url("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls")),
 	
 	url(r'^%s/photologue/' % settings.SITE_PREFIX, include('photologue.urls', namespace='photologue')),
+    
 
 ]
 

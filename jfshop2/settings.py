@@ -255,6 +255,8 @@ INSTALLED_APPS = (
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 
+    "picturesconfig",
+
 	"photologue",
 	"sortedm2m",
 )
