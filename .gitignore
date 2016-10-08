@@ -49,7 +49,7 @@ Temporary Items
 
 *.pyc
 mezzanine_themes.egg-info
-static
+./static
 build
 dev.db
 lghttest.html
