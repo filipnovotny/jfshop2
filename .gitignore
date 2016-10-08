@@ -58,3 +58,10 @@ mezzanine_themes/metro/locale/ru/LC_MESSAGES/django.po
 test.html
 mezzanine_themes/metro/locale/ru/LC_MESSAGES/django.mo
 mezzanine_themes/metro/preview/preview.gif
+*.map
+mezzanine_themes/metro/static/app/*.js
+.picasa.ini
+.picasaoriginals
+mezzanine_themes/metro/static/node_modules
+static/media
+static/img
