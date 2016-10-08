@@ -6,28 +6,6 @@ from django.views.generic import View
 
 from django.http import JsonResponse
 
-"""
-{
-	"label": "first picture",
-	"path": "/img/cache/IMGP0380_display.JPG",
-
-	"thumbs" : [
-		{
-			"path": "/img/cache/IMGP0380_display.JPG"
-		},
-		{
-			"path": "/img/cache/IMGP0380_thumbnail.JPG"
-		},
-		{
-			"path": "/img/cache/IMGP0380_bigthumb.JPG"
-		},
-		{
-			"path": "/img/cache/IMGP0380_admin_thumbnail.JPG"
-		}
-	]
-}
-"""
-
 class ConfigView(View):
 	def get(self, request):
 		photosizes = PhotoSize.objects.all();

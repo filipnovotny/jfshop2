@@ -8,6 +8,7 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { APP_CONFIG, AppConfig }  from 'portfolio/app/shared/config.service';
 
 import { PortfolioComponent }  from 'portfolio/app/portfolio.component';
+import { PortfolioItemComponent }  from 'portfolio/app/portfolioitem/portfolioitem.component';
 import { PictureModalComponent } from 'portfolio/app/picturemodal/picturemodal.component';
 
 import {AppComponent} from './app.component';
@@ -24,7 +25,7 @@ export const PORTFOLIO_DI_CONFIG: AppConfig = {
   	ModalModule.forRoot(),
     BootstrapModalModule
   	],
-  declarations: [ AppComponent,PortfolioComponent, PictureModalComponent ],
+  declarations: [ AppComponent,PortfolioComponent,PortfolioItemComponent, PictureModalComponent ],
   providers: [{ provide: APP_CONFIG, useValue: PORTFOLIO_DI_CONFIG }],
   bootstrap: [ AppComponent ],
 
