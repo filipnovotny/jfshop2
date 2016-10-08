@@ -48,6 +48,15 @@ do
   cat $f
 done
 
+cd ./mezzanine_themes/metro/static
+npm install
+cd node_modules/portfolio
+npm run tsc
+cd ../..
+npm run tsc
+cd ../../..
+
+
 
 echo yes | python manage.py collectstatic
 
