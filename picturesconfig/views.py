@@ -13,10 +13,18 @@ class ConfigView(View):
 		pics = []
 		for pic in featured_gallery:
 			thumbs = []
+			width = pic.image.width
+			height = pic.image.height
+			if 'Image Orientation' in pic.EXIF() and pic.EXIF().get('Image Orientation').values[0] > 4:
+				width = pic.image.height
+				height = pic.image.width
+            	
 			for pz in photosizes:
 				thumbs.append(
 						{
-							"path" : pic._get_SIZE_url(pz.name)
+							"path" : pic._get_SIZE_url(pz.name),
+							"width" : pic._get_SIZE_size(pz.name)[0],
+							"height" : pic._get_SIZE_size(pz.name)[1]
 						}
 					)
 			
@@ -24,7 +32,9 @@ class ConfigView(View):
 					{
 						"label" : pic.title,
 						"path"	: pic.image.url,
-						"thumbs": thumbs
+						"thumbs": thumbs,
+						"width" : width,
+						"height" : height
 					}
 				)
 				
