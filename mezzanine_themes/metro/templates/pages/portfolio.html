@@ -12,7 +12,7 @@
 
 {% block main %}
 
-<app>Loading...</app>
+<portfolio>Loading...</portfolio>
 
 </div>
 
@@ -28,10 +28,8 @@
 <script src="{{ STATIC_URL }}node_modules/reflect-metadata/Reflect.js"></script>
 <script src="{{ STATIC_URL }}node_modules/systemjs/dist/system.src.js"></script>
 
-<script src="{{ STATIC_URL }}systemjs.config.js"></script>
-
-
-<script>
-  System.import('app').catch(function(err){ console.error(err); });
-</script>
+<script>PORTFOLIO_url="/janela/picturesconfig/";</script>
+<script src="{{ STATIC_URL }}node_modules/portfolio/dist/portfolio.umd.js"></script>
 {% endblock %}
+
+

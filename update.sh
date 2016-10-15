@@ -50,8 +50,10 @@ done
 
 cd ./mezzanine_themes/metro/static
 npm install
+npm install gulp -g
 cd node_modules/portfolio
-npm run tsc
+npm install
+gulp --root /static/ --rootfs $MY_PATH/mezzanine_themes/metro/static/
 cd ../..
 npm run tsc
 cd ../../..
