@@ -1,3 +1,4 @@
+npm install gulp -g
 
 if [ -f /usr/local/nginx/conf/nginx.conf ];
 then
@@ -25,5 +26,6 @@ cp -rf ./apache2.conf /etc/apache2/sites-available/jfshop2.conf
 a2ensite jfshop2
 
 sv reload jfshop2
+
 service nginx reload
 service apache2 reload
