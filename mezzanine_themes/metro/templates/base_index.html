@@ -63,8 +63,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="logo text-center">
-							{% if settings.SITE_TITLE %}<h1 id="site-title"><a href="/">{{ settings.SITE_TITLE }}</a></h1>{% endif %}
-							{% if settings.SITE_TAGLINE %}<span id="site-tagline">{{ settings.SITE_TAGLINE }}</span>{% endif %}
+                            {% if settings.SITE_TITLE %}<h1 id="site-title"><a href="/{{ settings.SITE_PREFIX }}/">{{ settings.SITE_TITLE }}</a></h1>{% endif %}
+                            {% if settings.SITE_TAGLINE %}<span id="site-tagline">{{ settings.SITE_TAGLINE }}</span>{% endif %}
                         </div>
                     </div>
                 </div>
