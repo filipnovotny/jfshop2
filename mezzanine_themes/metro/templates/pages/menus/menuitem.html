@@ -1,0 +1,16 @@
+{% if page.pagewithicon %}
+<div class="menu-item {{page.pagewithicon.menustyle}}{% if page.is_current %} active{% endif %}{% if page.is_current_or_ascendant %} active-branch{% endif %}" id="tree-menu-{{ page.html_id }}">
+  <a href="{{page.get_absolute_url}}">
+    <i class="{{ page.pagewithicon.icon }}"></i>
+    <p>{{page.title}}</p>
+  </a>
+</div>
+{% endif %}
+{% if page.portfolio %}
+<div class="menu-item {{page.portfolio.menustyle}}{% if page.is_current %} active{% endif %}{% if page.is_current_or_ascendant %} active-branch{% endif %}" id="tree-menu-{{ page.html_id }}">
+  <a href="{{page.get_absolute_url}}">
+    <i class="{{ page.portfolio.icon }}"></i>
+    <p>{{page.title}}</p>
+  </a>
+</div>
+{% endif %}

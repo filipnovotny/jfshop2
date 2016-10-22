@@ -17,7 +17,7 @@
 
         <!-- Font Awesome CSS -->
         <link href="{{ STATIC_URL }}css/font-awesome.min.css" rel="stylesheet">
-		
+
 		<!-- Custom CSS -->
         <link href="{{ STATIC_URL }}css/animate.css" rel="stylesheet">
 
@@ -64,7 +64,7 @@
         <div class="mainbody-section text-center">
             <div class="container">
                 {% block container %}				
-					{% page_menu "pages/menus/breadcrumb.html" %}
+					{% page_menu "pages/menus/tree.html" %}
 					<div class="col-md-8">
 						<div class="container-fluid maincontent">
 						{% block main %}{% endblock %}

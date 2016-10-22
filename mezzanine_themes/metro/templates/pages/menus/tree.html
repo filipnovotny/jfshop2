@@ -1,0 +1,13 @@
+{% load i18n pages_tags %}
+
+{% spaceless %}
+{% if page_branch_in_menu %}
+<div class="navlist navlist-menu-level-{{ branch_level }}">
+<img src="{{ STATIC_URL }}img/menu_icon.png" id="menu-icon"/>
+<div class="content">
+{% include "pages/menus/menucolumn.html" with column=2 %}
+{% include "pages/menus/menucolumnNOT.html" with column=2 %}
+</div>
+</div>
+{% endif %}
+{% endspaceless %}

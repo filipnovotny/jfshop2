@@ -1,0 +1,15 @@
+{% load i18n pages_tags %}
+
+<div class="col-md-2 menu-column">
+{% for page in page_branch %}	
+	{% if page.has_children_in_menu %}
+      {% page_menu page %}
+    {% else %}
+    	{% if page.is_current_sibling %}
+	      {% if not forloop.counter|divisibleby:column %}
+	        {% include "pages/menus/menuitem.html" %}
+	      {% endif %}
+		{% endif %}
+ 	{% endif %}	
+{% endfor %}
+</div>
