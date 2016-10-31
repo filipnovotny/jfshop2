@@ -993,9 +993,12 @@ and (max-width : 991px) {
     .navlist .content { 
 
         display: none;
-        /*
+        
         position: absolute;
-        padding: 20px;
+        top:64px;
+        right:0;
+        z-index: 999999;
+        /*padding: 20px;
         background: #fff;
         border: 5px solid #444;
         right: 20px;
