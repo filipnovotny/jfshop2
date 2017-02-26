@@ -2,6 +2,7 @@ from django.db import models
 from mezzanine.pages.models import Page
 from mezzanine.core.models import RichText
 from photologue.models import Gallery
+import json;
 
 class PageWithIcon(Page, RichText):
 	icon = models.CharField("icon",max_length=255)
@@ -26,3 +27,7 @@ class Portfolio(Page, RichText):
 		
 	def get_menustyle(self):
 		return this.menustyle
+
+	def get_galleries(self):
+		return json.dumps(list([gal.slug for gal in self.photos.all()]))
+

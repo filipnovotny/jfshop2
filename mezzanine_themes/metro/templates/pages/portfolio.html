@@ -12,7 +12,8 @@
 
 {% block main %}
 
-<portfolio>Loading...</portfolio>
+
+<portfolio galleries='{{page.portfolio.get_galleries}}'>Loading...</portfolio>
 
 </div>
 
@@ -29,6 +30,9 @@
 <script src="{{ STATIC_URL }}node_modules/hammerjs/hammer.min.js"></script>
 
 
-<script>PORTFOLIO_url="{{ MEDIA_URL }}pics.json";</script>
+<script>
+PORTFOLIO_url="{{ MEDIA_URL }}";
+PORTFOLIO_default_gallery = "mes-creations";
+</script>
 <script src="{{ STATIC_URL }}node_modules/portfolio/dist/portfolio.umd.js"></script>
 {% endblock %}
