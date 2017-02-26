@@ -5,7 +5,9 @@
 # have to be manually restarted because changes will not be noticed
 # immediately.
 
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+
 
 # Make these unique, and don't share it with anybody.
 SECRET_KEY = "b#!8l#j6x5zap6d-4!9fv2f41@o$p@6-i4%w(!t!=znv5dz@(n"
@@ -21,13 +23,15 @@ DATABASES = {
         # Not used with sqlite3.
         "USER": "root",
         # Not used with sqlite3.
-        "PASSWORD": "aekx68eb",
+        "PASSWORD": "glegull",
         # Set to empty string for localhost. Not used with sqlite3.
         "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
         "PORT": "",
     }
 }
+
+SITE_PREFIX="janela"
 
 ###################
 # DEPLOY SETTINGS #

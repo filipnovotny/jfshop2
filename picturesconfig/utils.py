@@ -10,34 +10,36 @@ def write_file():
 	return pics
 
 def get_pics_with_sizes():
-	photosizes = PhotoSize.objects.all();
-	featured_gallery = Gallery.objects.get(title="Mes créations").public()
+	photosizes = PhotoSize.objects.all()
 	pics = []
-	for pic in featured_gallery:
-		thumbs = []
-		width = pic.image.width
-		height = pic.image.height
-		if 'Image Orientation' in pic.EXIF() and pic.EXIF().get('Image Orientation').values[0] > 4:
-			width = pic.image.height
-			height = pic.image.width
-        	
-		for pz in photosizes:
-			thumbs.append(
+	try:
+		featured_gallery = Gallery.objects.get(title="Mes créations").public()
+		for pic in featured_gallery:
+			thumbs = []
+			width = pic.image.width
+			height = pic.image.height
+			if 'Image Orientation' in pic.EXIF() and pic.EXIF().get('Image Orientation').values[0] > 4:
+				width = pic.image.height
+				height = pic.image.width
+
+			for pz in photosizes:
+				thumbs.append(
+						{
+							"path" : pic._get_SIZE_url(pz.name),
+							"width" : pic._get_SIZE_size(pz.name)[0],
+							"height" : pic._get_SIZE_size(pz.name)[1]
+						}
+					)
+
+			pics.append(
 					{
-						"path" : pic._get_SIZE_url(pz.name),
-						"width" : pic._get_SIZE_size(pz.name)[0],
-						"height" : pic._get_SIZE_size(pz.name)[1]
+						"label" : pic.title,
+						"path"	: pic.image.url,
+						"thumbs": thumbs,
+						"width" : width,
+						"height" : height
 					}
 				)
-		
-		pics.append(
-				{
-					"label" : pic.title,
-					"path"	: pic.image.url,
-					"thumbs": thumbs,
-					"width" : width,
-					"height" : height
-				}
-			)
-
+	except:
+		pass
 	return pics

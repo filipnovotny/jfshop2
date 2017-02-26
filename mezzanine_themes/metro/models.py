@@ -14,7 +14,7 @@ class PageWithIcon(Page, RichText):
 		return this.menustyle
 
 class Portfolio(Page, RichText):
-	photos = models.ForeignKey(Gallery)
+	photos = models.ManyToManyField(Gallery)
 	icon = models.CharField("icon",max_length=255)
 	menustyle = models.CharField("menustyle",max_length=255)
 	

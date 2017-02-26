@@ -6,6 +6,8 @@
 # immediately.
 
 DEBUG = True
+ALLOWED_HOSTS = ['*']
+
 
 # Make these unique, and don't share it with anybody.
 SECRET_KEY = "b#!8l#j6x5zap6d-4!9fv2f41@o$p@6-i4%w(!t!=znv5dz@(n"
@@ -15,13 +17,13 @@ FILEBROWSER_MAX_UPLOAD_SIZE = 40000000
 DATABASES = {
     "default": {
         # Ends with "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
         # DB name or path to database file if using sqlite3.
-        "NAME": "dev.db",
+        "NAME": "jfshop2",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "root",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "glegull",
         # Set to empty string for localhost. Not used with sqlite3.
         "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
