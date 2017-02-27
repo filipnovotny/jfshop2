@@ -5,7 +5,6 @@ import json
 def write_file():
 	galleries = Gallery.objects.all();
 	for gallery in galleries:
-		print("pics in " + gallery.title)
 		pics = get_pics_with_sizes(gallery);
 		with open("%s/%s.json" % (settings.MEDIA_ROOT,gallery.slug), "w") as text_file:
 			text_file.write(json.dumps({"data" : pics}))
